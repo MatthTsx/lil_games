@@ -24,7 +24,8 @@ export default class RendererContainer{
     private createRenderer(){
         const rend = new THREE.WebGLRenderer({
             canvas: this._canvas,
-            antialias: true
+            antialias: true,
+            alpha: true,
         })
 
         rend.outputEncoding = THREE.sRGBEncoding
@@ -34,6 +35,7 @@ export default class RendererContainer{
         rend.shadowMap.type = THREE.PCFShadowMap //tipo das sombras
         rend.setSize(this._sizes.width, this._sizes.height)
         rend.setPixelRatio(this._sizes.PixelRatio)
+        rend.setClearColor(0x000000, 0)
 
         return rend
     }

@@ -10,13 +10,14 @@ export class _3D{
     static instance: _3D;
 
     // @ts-ignore
-    _camera: CameraContainer; _Sizes: Sizes; _Timer: Timer; _scene : THREE.Scene; _canvas: HTMLCanvasElement; _rendererClass : RendererContainer
+    _camera: CameraContainer; _Sizes: Sizes; _Timer: Timer; _scene : THREE.Scene; _canvas: HTMLCanvasElement; _rendererClass : RendererContainer; _roomId: number
 
-    constructor(canvas? : any){
+    constructor(canvas? : any, roomId? : number){
         if(_3D.instance) return _3D.instance
         else
         _3D.instance = this
 
+        this._roomId = roomId || 1
         this._canvas = canvas
         this._scene = new THREE.Scene()
         this._Sizes = new Sizes()
