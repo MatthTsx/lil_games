@@ -3,6 +3,7 @@ import Sizes from "./utils/Sizes";
 import Timer from "./utils/Timer";
 import CameraContainer from "./components/Camera";
 import RendererContainer from "./components/Renderer";
+import World from "./models/World";
 
 
 export class _3D{
@@ -10,20 +11,21 @@ export class _3D{
     static instance: _3D;
 
     // @ts-ignore
-    _camera: CameraContainer; _Sizes: Sizes; _Timer: Timer; _scene : THREE.Scene; _canvas: HTMLCanvasElement; _rendererClass : RendererContainer; _roomId: number
+    _camera: CameraContainer; _Sizes: Sizes; _Timer: Timer; _scene : THREE.Scene; _canvas: HTMLCanvasElement; _rendererClass : RendererContainer; _roomId: number; _World : World
 
     constructor(canvas? : any, roomId? : number){
         if(_3D.instance) return _3D.instance
         else
         _3D.instance = this
 
-        this._roomId = roomId || 1
+        this._roomId = roomId || 0
         this._canvas = canvas
         this._scene = new THREE.Scene()
         this._Sizes = new Sizes()
         this._Timer = new Timer()
         this._camera = new CameraContainer()
         this._rendererClass = new RendererContainer()
+        this._World = new World()
 
         const mat = new THREE.MeshBasicMaterial({ color: "red" })
         const geo = new THREE.BoxGeometry(2,3,2)
