@@ -28,6 +28,13 @@ function Main3D({...Props} : Props) {
         console.log(__3D);
     },[__3D])
   
+    useEffect(() => {
+      if(!__3D) return
+      __3D._roomId = Props.room
+      __3D._World.update()
+      console.log(Props.room)
+    }, [Props.room])
+
     return (
       <>
         <main>

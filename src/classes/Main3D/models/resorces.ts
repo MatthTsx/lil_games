@@ -8,18 +8,20 @@ export default class Resources extends EventEmitter{
     _3Dparent : _3D
     _Loaders : Loaders
 
-    _assets : Assets
+    _assets : Array<Assets>
     _items: Array<Array<GLTF>> = new Array()
-    _queue: number
+    _queue: number = 0
     _loaded: number = 0
 
-    constructor(assets : Assets){
+    constructor(assets : Array<Assets>){
         super()
         this._3Dparent = new _3D()
         this._Loaders = this.setLoaders()
 
         this._assets = assets
-        this._queue = assets.length
+        for(const asset of assets){
+            this._queue += asset.length
+        }
 
         this.setLoaders()
         this.startLoading()
@@ -33,21 +35,23 @@ export default class Resources extends EventEmitter{
     }
 
     private startLoading(){
-        for(const asset of this._assets){
-            if(asset.type == "gltf"){
-                this._Loaders.gltf.load(asset.path, (file) => {
-                    this.LoadedFile(file)
-                })
+        for(const a of this._assets){
+            for(const asset of a){
+                if(asset.type == "gltf"){
+                    this._Loaders.gltf.load(asset.path, (file) => {
+                        this.LoadedFile(file, this._assets.indexOf(a))
+                    })
+                }
             }
         }
     }
 
-    private LoadedFile(file : GLTF){
-        if(!this._items[0]) return
-        this._items[0][this._items.length] = file
+    private LoadedFile(file : GLTF, numb: number){
+        if(!this._items[numb] || !this._items) return
+        // @ts-ignore
+        this._items[numb][this._items.length] = file
         this._loaded++
 
         if(this._loaded = this._queue) this.emit('ready')
     }
 }
-// slt Vargas, reforma trabalhista Temer -- estudar para a prox aula de Ética

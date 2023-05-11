@@ -1,8 +1,12 @@
 import { Assets } from "~/interfaces";
 
-export const assets : Assets = [
+const assets1 : Assets = [
     {
         path: "adwa",
         type: "gltf"
     }
+]
+
+export const assets : Array<Assets> = [
+    assets1
 ]

@@ -1,7 +1,7 @@
 import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
-import { _3D } from "../_3D";
+import { _3D } from "../../_3D";
 import * as THREE from 'three'
-import World from "./World";
+import World from "../World";
 
 export default class Room {
 
@@ -18,16 +18,21 @@ export default class Room {
     }
 
     public setObjects(objects: Array<GLTF>){
-        this._objects = []
         objects.forEach((obj) => {
             this._objects.push(obj.scene)
         })
-        
+        this.Load(this._objects)
     }
 
     private Load(assets: typeof this._objects){
         assets.forEach((model) => {
             this._scene.add(model);
         })
+    }
+
+    public remove(){
+        this._objects.forEach((obj) => {
+            this._3Dparent._scene.remove(obj)
+        }) 
     }
 }
