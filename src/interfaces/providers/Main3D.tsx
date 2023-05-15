@@ -40,7 +40,7 @@ function Main3D({...Props} : Props) {
         <main>
           <canvas id="canvas" className="fixed"/>
           {Props.children}
-          <div className='m-4 bg-black w-8 h-8 text-white flex items-center justify-center'>{fps}</div>
+          <div className='m-4 bg-black w-8 h-8 text-white flex items-center justify-center absolute bottom-0'>{fps}</div>
         </main>
       </>
     );

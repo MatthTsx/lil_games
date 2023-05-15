@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    ._Buttons{
+        @apply w-28 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg shadow-xl text-lg font-semibold text-black/75 transition-all hover:scale-105
+        hover:opacity-100 opacity-80 rotate-6
+    }
+
+    @keyframes _Buttons {
+        0%{
+            
+        }
+    }
+}
