@@ -35,8 +35,8 @@ export default class RendererContainer{
         rend.shadowMap.type = THREE.PCFShadowMap //tipo das sombras
         rend.setSize(this._sizes.width, this._sizes.height)
         rend.setPixelRatio(this._sizes.PixelRatio)
-        rend.setClearColor(0x000000, 0)
-
+        rend.setClearColor("#967f39", .0)
+        //0x000000
         return rend
     }
 

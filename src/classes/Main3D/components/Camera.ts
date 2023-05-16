@@ -31,7 +31,7 @@ export default class CameraContainer{
             0.1,
             1000
         )
-        cam.position.z = 5
+        cam.position.z = 10
         return cam
     }
 
