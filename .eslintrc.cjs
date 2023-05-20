@@ -22,6 +22,7 @@ const config = {
         "@typescript-eslint/restrict-template-expressions": "off",
         "@typescript-eslint/restrict-plus-operands": "off",
         "react-hooks/exhaustive-deps": "off",
+        "@typescript-eslint/no-unsafe-return": "off"
       }
     },
   ],

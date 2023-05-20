@@ -30,8 +30,8 @@ export default class CameraContainer{
     }
 
     private updateMouse(e : MouseEvent){
-        let centerX = window.innerWidth * 0.5;
-        let centerY = window.innerHeight * 0.5;
+        const centerX = window.innerWidth * 0.5;
+        const centerY = window.innerHeight * 0.5;
 
         this._camera.position.x += (e.clientX - centerX) * 0.001 - this._camera.position.x;
         this._camera.position.y += (-e.clientY + centerY) * .001 - this._camera.position.y;

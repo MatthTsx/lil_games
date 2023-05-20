@@ -6,11 +6,6 @@ export interface _2Props {
     func: Dispatch<SetStateAction<number>>
 }
 
-interface Pos{
-  x: number,
-  y: number,
-}
-
 function Screen({...Props} : _2Props) {
 
   return (
