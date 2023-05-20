@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { _2Props } from '../providers/Screen'
+import type { _2Props } from '../providers/Screen'
 import * as PPT from '~/scripts/PPT'
 import HomeButton from './HomeButton'
 

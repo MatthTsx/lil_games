@@ -1,7 +1,7 @@
 import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
 import { _3D } from "../../_3D";
-import * as THREE from 'three'
-import World from "../World";
+import type * as THREE from 'three'
+import type World from "../World";
 
 export default class Room {
 

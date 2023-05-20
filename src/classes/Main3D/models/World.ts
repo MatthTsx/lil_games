@@ -2,7 +2,7 @@ import { _3D } from "../_3D";
 import { assets } from "../constants/models";
 import Resources from "./resorces";
 import GetRoom from "./rooms/getRooms";
-import Room from "./rooms/room";
+import type Room from "./rooms/room";
 
 
 export default class World{

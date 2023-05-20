@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, use, useRef } from 'react'
+import React, { type Dispatch, type SetStateAction } from 'react'
 import GetScreen from '../layout/getScreen'
 
 export interface _2Props {

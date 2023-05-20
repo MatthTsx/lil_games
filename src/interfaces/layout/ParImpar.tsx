@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { _2Props } from '../providers/Screen'
-import getParOrImpar, { P, P_ } from '~/scripts/ParImpar'
+import type { _2Props } from '../providers/Screen'
+import getParOrImpar, { P, type P_ } from '~/scripts/ParImpar'
 import HomeButton from './HomeButton'
 
 function ParImpar({...Props} : _2Props) {

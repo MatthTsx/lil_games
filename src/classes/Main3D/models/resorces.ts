@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import { _3D } from "../_3D";
 import { type GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { Assets, Loaders } from "~/interfaces";
+import type { Assets, Loaders } from "~/interfaces";
 
 export default class Resources extends EventEmitter{
 

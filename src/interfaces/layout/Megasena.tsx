@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { _2Props } from '../providers/Screen'
+import type { _2Props } from '../providers/Screen'
 import GetMegaNumbers from '~/scripts/MegaSena'
 import HomeButton from './HomeButton'
 import { sleep } from '~/scripts/utils'

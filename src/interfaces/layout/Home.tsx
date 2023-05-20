@@ -1,5 +1,5 @@
 import React from 'react'
-import { _2Props } from '../providers/Screen'
+import type { _2Props } from '../providers/Screen'
 import { Buttons } from '~/constants/HomeButtons'
 
 export interface Props extends _2Props{

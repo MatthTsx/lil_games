@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react'
+import React, { type ReactNode, useEffect, useRef, useState } from 'react'
 import { _3D } from '~/classes/Main3D/_3D'
 
 interface Props {
@@ -32,7 +32,6 @@ function Main3D({...Props} : Props) {
       if(!__3D) return
       __3D._roomId = Props.room
       __3D._World.update()
-      console.log(Props.room)
     }, [Props.room])
 
     return (

@@ -4,7 +4,7 @@ import Home from './Home'
 import Megasena from './Megasena'
 import ParImpar from './ParImpar'
 import PedraPapelTesoura from './PedraPapelTesoura'
-import { _2Props } from '../providers/Screen'
+import type { _2Props } from '../providers/Screen'
 
 
 function GetScreen({...Props} : _2Props) {

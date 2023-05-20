@@ -1,4 +1,4 @@
-import { Assets } from "~/interfaces";
+import type { Assets } from "~/interfaces";
 
 const assets1 : Assets = [
     {

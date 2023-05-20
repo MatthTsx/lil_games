@@ -1,9 +1,9 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 
 interface Props{
-    func: Dispatch<SetStateAction<number>>
+    func: React.Dispatch<React.SetStateAction<number>>
 }
 
 function HomeButton({ func }: Props) {

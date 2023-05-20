@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { _3D } from '../_3D'
-import Sizes from '../utils/Sizes'
+import type Sizes from '../utils/Sizes'
 
 export default class RendererContainer{
     renderer : THREE.WebGLRenderer
