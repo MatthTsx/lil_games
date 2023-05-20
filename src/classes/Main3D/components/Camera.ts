@@ -12,6 +12,8 @@ export default class CameraContainer{
     _Orb : OrbitControls
     _canvas : HTMLCanvasElement
 
+    _mousePos: { x: number, y: number }
+
     constructor(){
         this._3DParent = new _3D()
         this._Sizes = this._3DParent._Sizes
@@ -22,6 +24,17 @@ export default class CameraContainer{
         this._Orb = new OrbitControls(this._camera, this._canvas)
         this._Orb.enableZoom = true
         this._Scene.add(this._camera)
+
+        this._mousePos = { x: 0, y:0}
+        window.addEventListener("mousemove", (e) => this.updateMouse(e))
+    }
+
+    private updateMouse(e : MouseEvent){
+        var centerX = window.innerWidth * 0.5;
+        var centerY = window.innerHeight * 0.5;
+
+        this._camera.position.x += (e.clientX - centerX) * 0.001 - this._camera.position.x;
+        this._camera.position.y += (-e.clientY + centerY) * .001 - this._camera.position.y;
     }
 
     private createCamera(){

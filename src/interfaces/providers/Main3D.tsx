@@ -38,9 +38,10 @@ function Main3D({...Props} : Props) {
     return (
       <>
         <main>
-          <canvas id="canvas" className="fixed"/>
+          <canvas id="canvas" className="fixed -z-50 pointer-events-none"/>
           {Props.children}
-          <div className='m-4 bg-black w-8 h-8 text-white flex items-center justify-center absolute bottom-0'>{fps}</div>
+          <div className='m-4 w-12 h-6 opacity-75 text-white flex items-center justify-center absolute bottom-0 text-xs
+          '>fps: {fps}</div>
         </main>
       </>
     );

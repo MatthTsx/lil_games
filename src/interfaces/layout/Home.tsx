@@ -15,17 +15,17 @@ function Home({...Props} : Props) {
       }}/>
 
       <div className='flex flex-col w-full h-full justify-center items-center gap-4'>
-        <div className='absolute flex flex-col justify-center items-center gap-4 right-8 bottom-8'>
-          {Buttons.map((B,i) => (
-            <button key={i} onClick={() => Props.func(B.value)}
-            className= '_Buttons peer'
-            style={{
-              marginRight: `${i * 5}rem`
-            }}
-            >{B.name}</button>
-          ))}
-          <div className='peer-hover:opacity-50 top-48 left-48 transition-all duration-500 blur-3xl w-64 h-72 absolute z-[-1]
-          peer-hover:top-16 peer-hover:left-16 opacity-0 bg-gradient-to-br from-cyan-400 to-blue-500'/>
+        <div className='absolute flex flex-col justify-center items-center gap-4 w-full group -bottom-2'>
+          <div className='flex  justify-center items-center gap-4 w-full -bottom-12 absolute opacity-45
+          group-hover:opacity-100 group-hover:bottom-8 transition-all duration-300'>
+            <div className='w-[125%] h-72 bg-gradient-to-t from-black to-transparent absolute via-black blur-2xl'/>
+
+            {Buttons.map((B,i) => (
+              <button key={i} onClick={() => Props.func(B.value)}
+              className= '_Buttons peer'
+              >{B.name}</button>
+              ))}
+          </div>
         </div>
       </div>
     </>

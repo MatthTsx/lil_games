@@ -4,13 +4,80 @@
 
 @layer components{
     ._Buttons{
-        @apply w-28 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg shadow-xl text-lg font-semibold text-black/75 transition-all hover:scale-105
-        hover:opacity-100 opacity-80 rotate-6
+        @apply w-28 h-12 bg-gradient-to-t via-orange-600 to-yellow-600 rounded-lg shadow-xl text-lg font-semibold text-black/75 transition-all hover:scale-105
+        hover:opacity-100 opacity-80 scale-100 duration-300 from-red-500
     }
 
-    @keyframes _Buttons {
-        0%{
-            
-        }
+    .megacenaResp{
+        @apply w-12 h-12 bg-black text-xl flex items-center justify-center rounded-2xl text-orange-500;
+    }
+    
+    .megacenaKeyFrames{
+        animation: megacenaResp2 750ms forwards;
+    }
+
+    ._IPButton{
+        @apply bg-black text-orange-500 w-16 h-8 rounded-md transition-all opacity-75 hover:opacity-90
+        hover:scale-100 scale-95
+    }
+
+    ._IPBtnActivate{
+        @apply  scale-110 opacity-90 hover:scale-110 hover:opacity-95
+    }
+
+    ._WinStatusPPT{
+        animation: WinStatusPPT 1000ms forwards;
+    }
+    
+    .blurAnimation{
+        animation: blurAn 500ms forwards ease;
+    }
+}
+
+@keyframes blurAn {
+    0%{filter: blur(.5em);}
+    100%{filter: blur(0);}
+}
+
+@keyframes WinStatusPPT {
+    0%{
+        scale: 1;
+        transform: rotate(180deg);
+        filter:blur(.05em);
+    }
+    20%{
+        filter:blur(0);
+        scale: 3;
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(30deg);
+    }
+    75%{
+        scale: 3;
+        transform: rotate(-5deg);
+        opacity: 1;
+    }
+    100%{
+        scale: 0.1;
+        opacity: 0;
+    }
+}
+
+@keyframes megacenaResp2 {
+    0%{
+        scale: 0.95;
+        filter: blur(1px);
+    }
+    30%{
+        scale:1.20;
+        background-color: orange;
+        transform: rotate(720deg);
+    }
+    90%{
+        scale:1.10
+    }
+    100%{
+        scale: 1;
     }
 }

@@ -7,9 +7,9 @@ export enum Choice{
 }
 
 export enum WinStatus{
-    win,
-    tie,
-    loss
+    win = 1,
+    tie = 2,
+    loss = 3
 }
 
 export interface Props{
@@ -51,5 +51,5 @@ export function getPPT({...Props} : Props){
     }
     resp.winner = isWinning({ choice1: Props.choice, enemy: resp.choice })
 
-    console.log(resp)
+    return resp
 }
